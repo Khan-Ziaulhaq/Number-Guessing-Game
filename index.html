@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const minNum = 1;
+        const maxNum = 100;
+        const num = Math.floor(Math.random() * (maxNum - minNum)) + minNum;
+
+        let attempts = 0;
+        let guess;
+        let running = true;
+
+        while (running) {
+            guess = Number(prompt(`Enter the Number between ${minNum} - ${maxNum}`))
+            if (isNaN(guess) || guess > maxNum || guess < minNum) {
+                window.alert(`Enter a Valid Number`)
+            } else {
+                attempts++;
+                if (num > guess) {
+                    window.alert(`Guessed Number Is Low `)
+                } else if (num < guess) {
+                    window.alert(`Guessed Number Is High `)
+                } else {
+                    window.alert(`Correct! The Answer was ${num} , You took ${attempts} attempts`)
+                    running = false;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
